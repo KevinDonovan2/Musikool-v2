@@ -1,23 +1,23 @@
-import React, { useEffect, useContext, useState } from "react";
-import { 
-    View, 
-    Text, 
-    FlatList, 
-    TouchableOpacity, 
-    StyleSheet, 
-    ActivityIndicator, 
-    TextInput 
-} from "react-native";
-import { AudioContext } from "../context/AudioContext";
-import { useNavigation } from "@react-navigation/native";
+import React, { useEffect, useContext, useState } from 'react';
+import {
+    View,
+    Text,
+    FlatList,
+    TouchableOpacity,
+    StyleSheet,
+    ActivityIndicator,
+    TextInput,
+} from 'react-native';
+import { AudioContext } from '../context/AudioContext';
+import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
-import { StackNavigationProp } from "@react-navigation/stack";
+import { StackNavigationProp } from '@react-navigation/stack';
 
 type RootStackParamList = {
     Player: { trackIndex: number };
 };
 
-type NavigationProps = StackNavigationProp<RootStackParamList, "Player">;
+type NavigationProps = StackNavigationProp<RootStackParamList, 'Player'>;
 
 interface AudioFile {
     filename: string;
@@ -30,10 +30,11 @@ interface AudioContextType {
 const ListScreen: React.FC = () => {
     const context = useContext<AudioContextType | undefined>(AudioContext);
     const audioFiles = context?.audioFiles || [];
-    
+
     const [loading, setLoading] = useState(true);
-    const [searchText, setSearchText] = useState(""); 
-    const [filteredAudioFiles, setFilteredAudioFiles] = useState<AudioFile[]>(audioFiles); 
+    const [searchText, setSearchText] = useState('');
+    const [filteredAudioFiles, setFilteredAudioFiles] =
+        useState<AudioFile[]>(audioFiles);
     const navigation = useNavigation<NavigationProps>();
 
     useEffect(() => {
@@ -45,7 +46,7 @@ const ListScreen: React.FC = () => {
 
     // Filtrer les fichiers audio en fonction du texte de recherche
     useEffect(() => {
-        if (searchText === "") {
+        if (searchText === '') {
             setFilteredAudioFiles(audioFiles);
         } else {
             const filtered = audioFiles.filter((item: AudioFile) =>
@@ -61,13 +62,18 @@ const ListScreen: React.FC = () => {
 
             {/* Champ de Recherche avec une icône de recherche */}
             <View style={styles.searchContainer}>
-                <Ionicons name="search" size={20} color="#b3b3b3" style={styles.searchIcon} />
+                <Ionicons
+                    name="search"
+                    size={20}
+                    color="#b3b3b3"
+                    style={styles.searchIcon}
+                />
                 <TextInput
                     style={styles.searchInput}
                     placeholder="Search Songs..."
                     placeholderTextColor="#b3b3b3"
                     value={searchText}
-                    onChangeText={setSearchText} 
+                    onChangeText={setSearchText}
                 />
             </View>
 
@@ -82,10 +88,20 @@ const ListScreen: React.FC = () => {
                     renderItem={({ item, index }) => (
                         <TouchableOpacity
                             style={styles.audioItem}
-                            onPress={() => navigation.navigate("Player", { trackIndex: index })}
+                            onPress={() =>
+                                navigation.navigate('Player', {
+                                    trackIndex: index,
+                                })
+                            }
                         >
-                            <Ionicons name="musical-note" size={20} color="#b3b3b3" />
-                            <Text style={styles.audioTitle}>{item.filename}</Text>
+                            <Ionicons
+                                name="musical-note"
+                                size={20}
+                                color="#b3b3b3"
+                            />
+                            <Text style={styles.audioTitle}>
+                                {item.filename}
+                            </Text>
                         </TouchableOpacity>
                     )}
                 />
@@ -97,22 +113,22 @@ const ListScreen: React.FC = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#000",
-        padding: 20
+        backgroundColor: '#000',
+        padding: 20,
     },
     title: {
         fontSize: 24,
-        fontWeight: "bold",
-        color: "#FFD700",
+        fontWeight: 'bold',
+        color: '#FFD700',
         marginBottom: 20,
-        textAlign: "center"
+        textAlign: 'center',
     },
     searchContainer: {
-        flexDirection: "row",
-        alignItems: "center",
-        width: "85%",
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '85%',
         height: 50,
-        backgroundColor: "#fff",
+        backgroundColor: '#fff',
         borderRadius: 25,
         marginBottom: 20,
     },
@@ -121,50 +137,50 @@ const styles = StyleSheet.create({
     },
     searchInput: {
         flex: 1,
-        height: "100%",
+        height: '100%',
         fontSize: 16,
-        color: "#000",
+        color: '#000',
         paddingLeft: 10,
     },
     noMusicText: {
-        color: "#b3b3b3",
+        color: '#b3b3b3',
         fontSize: 16,
-        textAlign: "center",
-        marginTop: 20
+        textAlign: 'center',
+        marginTop: 20,
     },
     audioItem: {
-        backgroundColor: "#222",
+        backgroundColor: '#222',
         padding: 20,
         marginVertical: 4,
         borderRadius: 8,
-        flexDirection: "row",
+        flexDirection: 'row',
         gap: 8,
     },
     audioTitle: {
-        color: "#FFF",
-        fontSize: 16
+        color: '#FFF',
+        fontSize: 16,
     },
     pagination: {
-        position: "absolute",
+        position: 'absolute',
         bottom: 20,
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%"
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
     },
     paginationDot: {
         width: 12,
         height: 12,
         borderRadius: 6,
-        marginHorizontal: 5
+        marginHorizontal: 5,
     },
     activeDot: {
-        backgroundColor: "#FFD700",
+        backgroundColor: '#FFD700',
         width: 14,
-        height: 14
+        height: 14,
     },
     inactiveDot: {
-        backgroundColor: "#fff"
+        backgroundColor: '#fff',
     },
 });
 
