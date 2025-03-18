@@ -1,32 +1,32 @@
 {
-  "expo": {
-    "name": "Musikool",
-    "slug": "Musikool",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./src/assets/images/icon.png",
-      "resizeMode": "contain"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.Musikool"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/icone.webp",
-        "backgroundColor": "#000000"
-      },
-      "package": "com.anonymous.Musikool"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "expo": {
+        "name": "Musikool",
+        "slug": "Musikool",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "",
+        "userInterfaceStyle": "light",
+        "newArchEnabled": true,
+        "splash": {
+            "image": "./src/assets/images/icon.png",
+            "resizeMode": "contain"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "com.anonymous.Musikool"
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/icone.webp",
+                "backgroundColor": "#000000"
+            },
+            "package": "com.anonymous.Musikool"
+        },
+        "web": {
+            "favicon": "./assets/favicon.png"
+        }
     }
-  }
 }

@@ -1,5 +1,11 @@
-import React from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
+import React from 'react';
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    ScrollView,
+} from 'react-native';
 interface HomeScreenProps {
     activeIndex?: number;
 }
@@ -9,17 +15,23 @@ export default function HomeScreen({ activeIndex }: HomeScreenProps) {
             {/* En-tête : Titre et Description */}
             <View style={styles.header}>
                 <Text style={styles.title}>Find Your Music</Text>
-                <Text style={styles.description}>Explore your favorite music, artists, and playlists.</Text>
+                <Text style={styles.description}>
+                    Explore your favorite music, artists, and playlists.
+                </Text>
             </View>
             {/* Section des Boutons Circulaires */}
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={[styles.button, styles.newSong]}>
                     <Text style={styles.buttonText}>New Song</Text>
-                    <Text style={styles.buttonDescription}>Discover new songs</Text>
+                    <Text style={styles.buttonDescription}>
+                        Discover new songs
+                    </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.button, styles.playlist]}>
                     <Text style={styles.buttonText}>Playlist</Text>
-                    <Text style={styles.buttonDescription}>Your favorite playlists</Text>
+                    <Text style={styles.buttonDescription}>
+                        Your favorite playlists
+                    </Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonsContainer}>
@@ -32,7 +44,6 @@ export default function HomeScreen({ activeIndex }: HomeScreenProps) {
                     <Text style={styles.buttonDescription}>Top Pop songs</Text>
                 </TouchableOpacity>
             </View>
-
         </ScrollView>
     );
 }
@@ -40,47 +51,47 @@ export default function HomeScreen({ activeIndex }: HomeScreenProps) {
 const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
-        backgroundColor: "#000",
-        alignItems: "center",
+        backgroundColor: '#000',
+        alignItems: 'center',
         paddingTop: 50,
         paddingBottom: 20,
     },
     header: {
-        alignItems: "center",
+        alignItems: 'center',
         marginBottom: 30,
     },
     title: {
         fontSize: 28,
-        fontWeight: "bold",
-        color: "#FFD700",
+        fontWeight: 'bold',
+        color: '#FFD700',
     },
     description: {
         fontSize: 16,
-        color: "#b3b3b3",
+        color: '#b3b3b3',
         marginTop: 5,
-        textAlign: "center",
+        textAlign: 'center',
         paddingHorizontal: 20,
     },
     searchInput: {
-        width: "85%",
+        width: '85%',
         height: 50,
-        backgroundColor: "#fff",
+        backgroundColor: '#fff',
         borderRadius: 25,
         paddingLeft: 20,
         fontSize: 16,
-        color: "#000",
+        color: '#000',
         marginBottom: 30,
     },
     buttonsContainer: {
-        flexDirection: "row",
-        justifyContent: "space-around",
-        width: "100%",
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%',
         marginBottom: 20,
         paddingHorizontal: 10,
     },
     button: {
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: 'center',
+        alignItems: 'center',
         width: 120,
         height: 120,
         borderRadius: 60,
@@ -88,34 +99,34 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 18,
-        fontWeight: "bold",
-        color: "#000",
+        fontWeight: 'bold',
+        color: '#000',
     },
     buttonDescription: {
         fontSize: 12,
-        color: "#333",
+        color: '#333',
         marginTop: 5,
-        textAlign: "center",
+        textAlign: 'center',
     },
     newSong: {
-        backgroundColor: "#FFC107",
+        backgroundColor: '#FFC107',
     },
     playlist: {
-        backgroundColor: "#DAA520",
+        backgroundColor: '#DAA520',
     },
     favorite: {
-        backgroundColor: "#DAA520",
+        backgroundColor: '#DAA520',
     },
     pop: {
-        backgroundColor: "#FFC107",
+        backgroundColor: '#FFC107',
     },
     pagination: {
-        position: "absolute",
+        position: 'absolute',
         bottom: 20,
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
     },
     paginationDot: {
         width: 12,
@@ -124,11 +135,11 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
     },
     activeDot: {
-        backgroundColor: "#FFD700",
+        backgroundColor: '#FFD700',
         width: 14,
         height: 14,
     },
     inactiveDot: {
-        backgroundColor: "#fff",
+        backgroundColor: '#fff',
     },
 });
