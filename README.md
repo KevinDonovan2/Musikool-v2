@@ -28,7 +28,7 @@ Développé en **React Native** pour une compatibilité parfaite entre **iOS** e
 
 ---
 
-## 🚀 Lancer le projet
+## 🚀 Lancement du projet React Native
 
 1. **Cloner le dépôt**
 
@@ -43,10 +43,7 @@ cd Musikool
 npm install
 ```
 
-3- **Run**
+3. **Run**
 
 ```bash
 npx expo start
-
-
-
