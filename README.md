@@ -35,3 +35,18 @@ Développé en **React Native** pour une compatibilité parfaite entre **iOS** e
 ```bash
 git clone https://github.com/TonUsername/Musikool.git
 cd Musikool
+```
+
+2. **install dependance**
+
+```bash
+npm install
+```
+
+3- **Run**
+
+```bash
+npx expo start
+
+
+
